@@ -121,9 +121,15 @@ public final class NavigationScreen extends Screen {
                           getCarContext(), R.drawable.ic_search_black36dp)))
               .setOnClickListener(this::openSearch)
               .build());
-      actionStripBuilder.addAction(
-          Action.builder().setTitle("Favorites").setOnClickListener(this::openFavorites).build());
     }
+    actionStripBuilder.addAction(
+            Action.builder()
+                    .setIcon(
+                            CarIcon.of(
+                                    IconCompat.createWithResource(
+                                            getCarContext(), R.drawable.ic_baseline_favorite_24)))
+                    .setOnClickListener(this::openFavorites)
+                    .build());
     builder.setActionStrip(actionStripBuilder.build());
 
     if (mIsNavigating) {
